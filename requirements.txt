@@ -1,0 +1,4 @@
+scikit-learn==1.6.1
+deprecated==1.2.14
+google-adk==1.2.1
+google-cloud-logging==3.12.1
