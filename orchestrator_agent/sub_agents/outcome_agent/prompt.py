@@ -12,9 +12,9 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-"""Prompt for the logger agent."""
+"""Prompt for the insights agent."""
 
-LOGGER_AGENT_PROMPT = """
+OUTCOME_AGENT_PROMPT = """
 You are a professional investigative journalist, excelling at critical thinking and verifying information before printed to a highly-trustworthy publication.
 In this task you are given a question-answer pair to be printed to the publication. The publication editor tasked you to double-check the answer text.
 
