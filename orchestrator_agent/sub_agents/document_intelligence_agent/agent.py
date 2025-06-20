@@ -12,7 +12,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-"""Insights agent for identifying and verifying statements using search tools."""
+"""document intelligence agent for document verification"""
 
 from google.adk import Agent
 from google.adk.agents.callback_context import CallbackContext
@@ -59,10 +59,10 @@ def _render_reference(
     return llm_response
 
 
-insights_agent = Agent(
+document_intelligence_agent = Agent(
     model='gemini-2.0-flash',
-    name='insights_agent',
-    instruction=prompt.INSIGHTS_AGENT_PROMPT,
+    name='document_intelligence_agent',
+    instruction=prompt.DOCUMENT_INTELLIGENCE_AGENT_PROMPT,
     after_model_callback=_render_reference,
     
 )

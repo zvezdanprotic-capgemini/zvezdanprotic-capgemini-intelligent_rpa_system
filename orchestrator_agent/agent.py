@@ -16,10 +16,8 @@
 
 from google.adk.agents import SequentialAgent
 
-from .sub_agents.insights import insights_agent
-from .sub_agents.logger import logger_agent
-from .sub_agents.decision_executor import decision_executor_agent
-from .sub_agents.ui_context import ui_context_agent
+from .sub_agents.ui_capture_agent import ui_capture_agent
+from .sub_agents.document_intelligence_agent import document_intelligence_agent
 
 import logging
 import google.cloud.logging
@@ -31,12 +29,10 @@ cloud_logging_client.setup_logging()
 
 orchestrator_agent = SequentialAgent(
     name='orchestrator_agent',
-    description=(
-        'Evaluates LLM-generated answers, verifies actual accuracy using the'
-        ' web, and refines the response to ensure alignment with real-world'
-        ' knowledge.'
-    ),
-    sub_agents=[insights_agent, logger_agent, decision_executor_agent, ui_context_agent]
+    description="You are the Banking workflow Orchestrator. Direct the user submitted task to the specialized agents.",
+    instruction="""
+        """,
+    sub_agents=[ui_capture_agent, document_intelligence_agent]
 )
 
 root_agent = orchestrator_agent

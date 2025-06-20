@@ -12,7 +12,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-"""Critic agent for identifying and verifying statements using search tools."""
+"""Insights agent for identifying and verifying statements using search tools."""
 
 from google.adk import Agent
 from google.adk.agents.callback_context import CallbackContext
@@ -59,10 +59,10 @@ def _render_reference(
     return llm_response
 
 
-ui_context_agent = Agent(
+outcome_agent = Agent(
     model='gemini-2.0-flash',
-    name='ui_context_agent',
-    instruction=prompt.UI_CONTEXT_AGENT_PROMPT,
+    name='outcome_agent',
+    instruction=prompt.OUTCOME_AGENT_PROMPT,
     after_model_callback=_render_reference,
     
 )
