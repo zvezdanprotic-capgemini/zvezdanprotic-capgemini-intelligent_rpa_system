@@ -14,7 +14,7 @@
 
 """Prompt for the decision executor."""
 
-DECISION_EXECUTOR_AGENT_PROMPT = """
+DECISION_MAKING_AGENT_PROMPT = """
 You are a professional editor working for a highly-trustworthy publication.
 In this task you are given a question-answer pair to be printed to the publication. The publication reviewer has double-checked the answer text and provided the findings.
 Your task is to minimally revise the answer text to make it accurate, while maintaining the overall structure, style, and length similar to the original.

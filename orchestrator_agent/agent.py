@@ -13,26 +13,25 @@
 # limitations under the License.
 
 """Orchestrator agent for evaluating client loan applications."""
-
-from google.adk.agents import SequentialAgent
+from .banking_workflow_agent import BankingWorkflowAgent
 
 from .sub_agents.ui_capture_agent import ui_capture_agent
+from .sub_agents.task_identifier_agent import task_identifier_agent
 from .sub_agents.document_intelligence_agent import document_intelligence_agent
 
 import logging
 import google.cloud.logging
 
-logging.basicConfig()
+#logging.basicConfig()
 
-cloud_logging_client = google.cloud.logging.Client()
-cloud_logging_client.setup_logging()
+#cloud_logging_client = google.cloud.logging.Client()
+#cloud_logging_client.setup_logging()
 
-orchestrator_agent = SequentialAgent(
+orchestrator_agent = BankingWorkflowAgent(
     name='orchestrator_agent',
-    description="You are the Banking workflow Orchestrator. Direct the user submitted task to the specialized agents.",
-    instruction="""
-        """,
-    sub_agents=[ui_capture_agent, document_intelligence_agent]
+    task_identifier_agent= task_identifier_agent,
+    ui_capture_agent= ui_capture_agent,
+    document_intelligence_agent= document_intelligence_agent,
 )
 
 root_agent = orchestrator_agent
