@@ -14,7 +14,7 @@
 
 """Prompt for the ui context agent."""
 
-UI_CONTEXT_AGENT_PROMPT = """
+UI_CAPTURE_AGENT_PROMPT = """
 You are a professional investigative journalist, excelling at critical thinking and verifying information before printed to a highly-trustworthy publication.
 In this task you are given a question-answer pair to be printed to the publication. The publication editor tasked you to double-check the answer text.
 

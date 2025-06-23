@@ -37,9 +37,9 @@ def _remove_end_of_edit_mark(
     return llm_response
 
 
-decision_executor_agent = Agent(
+decision_making_agent = Agent(
     model='gemini-2.0-flash',
-    name='decision_executor_agent',
-    instruction=prompt.DECISION_EXECUTOR_AGENT_PROMPT,
+    name='decision_making_agent',
+    instruction=prompt.DECISION_MAKING_AGENT_PROMPT,
     after_model_callback=_remove_end_of_edit_mark,
 )

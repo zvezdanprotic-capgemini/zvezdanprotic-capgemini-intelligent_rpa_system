@@ -12,7 +12,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-"""ui context agent for screen understanding."""
+"""task identifier agent """
 
 from google.adk import Agent
 from google.adk.agents.callback_context import CallbackContext
@@ -59,10 +59,11 @@ def _render_reference(
     return llm_response
 
 
-ui_capture_agent = Agent(
+task_identifier_agent = Agent(
     model='gemini-2.0-flash',
-    name='ui_capture_agent',
-    instruction=prompt.UI_CAPTURE_AGENT_PROMPT,
+    name='task_identifier_agent',
+    instruction=prompt.TASK_IDENTIFIER_AGENT_PROMPT,
     after_model_callback=_render_reference,
+    output_key="identified_task"
     
 )

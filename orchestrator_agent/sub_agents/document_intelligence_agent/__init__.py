@@ -1,1 +1,1 @@
-from .agent import ui_context_agent  # Export ui_context_agent directly
+from .agent import document_intelligence_agent  # Export document_intelligence_agent directly

@@ -1,1 +1,1 @@
-from .agent import insights_agent  # Export insights_agent directly
+from .agent import outcome_agent  # Export insights_agent directly
